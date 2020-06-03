@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import TestElement from "./components/testElement";
+import { ShadowProps } from "./interfaces/interfaces";
+import Settings from "./components/settings";
+
+const defaultShadowProps: ShadowProps = {
+  horizontalOffset: 0,
+  verticalOffset: 48,
+  blurRadius: 150,
+  spreadRadius: -30,
+  inset: false,
+};
 
 function App() {
+  let [shadowProps, setShadowProps] = useState(defaultShadowProps);
+
+  const updateShadowProps = (newProps: ShadowProps) => {
+    setShadowProps(() => {
+      let props = { ...newProps };
+      return props;
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: "flex" }}>
+      <TestElement shadowProps={shadowProps} />
+      <Settings updateShadowProps={updateShadowProps} />
     </div>
   );
 }
