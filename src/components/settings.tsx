@@ -53,9 +53,9 @@ export default function Settings(props: SettingsProps) {
       }}
     >
       <Tabs classes={tabsStyles} value={tabIndex} onChange={handleChange}>
-        <Tab classes={tabStyles} value={0} label="Box Shadow"></Tab>
-        <Tab classes={tabStyles} value={1} label="Border"></Tab>
-        <Tab classes={tabStyles} value={2} label="Size & Position"></Tab>
+        <Tab classes={tabStyles} value={0} label="Box Shadow"/>
+        <Tab classes={tabStyles} value={1} label="Border"/>
+        <Tab classes={tabStyles} value={2} label="Size & Position"/>
       </Tabs>
       <ShadowPanel
         hidden={tabIndex !== 0}

@@ -14,9 +14,7 @@ export const defaultShadowProps: ShadowProps = {
   inset: false,
 };
 
-export interface BorderProps {}
-
-export interface SizeProps {
-  width: number;
-  height: number;
+export interface SizeProps{
+  width: number,
+  height: number
 }

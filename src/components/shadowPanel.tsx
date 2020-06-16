@@ -76,7 +76,7 @@ export default function ShadowPanel(props: ShadowPanelProps) {
         <Grid item xs>
           <Slider
             max={200}
-            value={typeof vOffsetValue === "number" ? vOffsetValue : 0}
+            value={vOffsetValue}
             onChange={handleVOffsetSliderChange}
             aria-labelledby="input-slider"
           />
@@ -94,7 +94,7 @@ export default function ShadowPanel(props: ShadowPanelProps) {
         <Grid item xs>
           <Slider
             max={200}
-            value={typeof blurRadius === "number" ? blurRadius : 0}
+            value={blurRadius}
             onChange={handleBlurRadiusSliderChange}
             aria-labelledby="input-slider"
           />
@@ -113,7 +113,7 @@ export default function ShadowPanel(props: ShadowPanelProps) {
           <Slider
             min={-100}
             max={200}
-            value={typeof spreadRadius === "number" ? spreadRadius : 0}
+            value={spreadRadius}
             onChange={handleSpreadRadiusSliderChange}
             aria-labelledby="input-slider"
           />
